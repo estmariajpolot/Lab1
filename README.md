@@ -1,1 +1,1 @@
-# Lab1
+# Laboratorio análisis estadístico de señales
