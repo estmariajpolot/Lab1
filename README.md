@@ -333,7 +333,7 @@ No obstante, una SNR elevada no garantiza necesariamente que la señal sea clín
 Además, la SNR no distingue entre tipos de contaminación ni identifica si el ruido afecta regiones críticas de la señal, como el complejo QRS o el segmento ST. Por ello, la evaluación de calidad debe considerar tanto métricas cuantitativas como inspección visual y análisis contextual.
 
 ---
-### CONCLUSIONES
+### Conclusiones
 
 - Se logró caracterizar estadísticamente señales fisiológicas reales y sintéticas mediante el cálculo de parámetros descriptivos como media, desviación estándar, coeficiente de variación, asimetría y curtosis.
 
