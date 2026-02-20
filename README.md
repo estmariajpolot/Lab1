@@ -52,6 +52,8 @@ En esta parte del trabajo se realiza el análisis de una señal electrocardiogr�
   <em>Diagrama de flujo completo código principal</em>
 </p>
 
+---
+
 ## Explicación del código
 
 En esta sección se explica el funcionamiento del código utilizado para el análisis estadístico de una señal fisiológica descargada desde PhysioNet.
