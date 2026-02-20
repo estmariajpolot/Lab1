@@ -154,9 +154,9 @@ Esta herramienta permiten integrar la adquisición experimental con el procesami
 
 ### Adquisición de la señal fisiológica
 
-La señal se adquiere mediante una tarjeta DAQ configurada con una frecuencia de muestreo y una duración previamente definidas. Durante este proceso se selecciona el canal de entrada analógica y se registran las muestras de manera controlada.
+La adquisición de la señal se realizó mediante un código independiente desarrollado específicamente para la captura de datos utilizando una tarjeta DAQ. Este script externo se encargó de configurar los parámetros de adquisición, como la frecuencia de muestreo, la duración del registro y la selección del canal de entrada analógica.
 
-Una vez finalizada la adquisición, la señal se guarda en un archivo de texto que contiene dos columnas: tiempo (s) y voltaje (V). Esto facilita su posterior procesamiento y análisis en Python.
+Como resultado del proceso de captura, se generó un archivo en formato TXT que contiene dos columnas: tiempo (s) y voltaje (V).
 
 <p align="center">
   <img src="Captura.png" width="700">
@@ -165,6 +165,8 @@ Una vez finalizada la adquisición, la señal se guarda en un archivo de texto q
 <p align="center">
   <em>Señal Captura de datos </em>
 </p>
+
+El código principal del proyecto no realiza la adquisición directamente, sino que utiliza como entrada el archivo TXT generado por el script de captura. A partir de este archivo, se lleva a cabo el procesamiento y análisis.
 
 ---
 
@@ -176,6 +178,10 @@ Con base en la frecuencia de muestreo utilizada durante la adquisición, se cons
 
 ### Visualización de la señal
 
+El código grafica la señal adquirida en función del tiempo. Esta visualización permite verificar que la adquisición se haya realizado correctamente y observar características propias de una señal real, como la presencia de ruido, variaciones en la amplitud y posibles artefactos.
+
+La inspección visual es un paso clave antes de realizar el análisis estadístico.
+
 <p align="center">
   <img src="img3.png" width="700">
 </p>
@@ -183,11 +189,6 @@ Con base en la frecuencia de muestreo utilizada durante la adquisición, se cons
 <p align="center">
   <em> Señal ECG adquirida </em>
 </p>
-
-
-El código grafica la señal adquirida en función del tiempo. Esta visualización permite verificar que la adquisición se haya realizado correctamente y observar características propias de una señal real, como la presencia de ruido, variaciones en la amplitud y posibles artefactos.
-
-La inspección visual es un paso clave antes de realizar el análisis estadístico.
 
 ---
 
