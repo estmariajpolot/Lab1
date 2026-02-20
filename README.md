@@ -138,6 +138,7 @@ Se incluye una línea vertical que representa la media, facilitando la interpret
 <p align="center">
   <em>Histograma Parte A </em>
 </p>
+
 ---
 
 ### Parte B
