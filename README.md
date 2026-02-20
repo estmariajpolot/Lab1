@@ -129,7 +129,11 @@ Finalmente, se genera un histograma de la señal ECG analizada. Este permite obs
 
 Se añade una línea vertical que representa la media, lo que facilita interpretar visualmente la distribución de los datos con respecto a su valor central.
 
-![Imagen 3](img2.png)
+<p align="center">
+  <img src="img1.png" width="700">
+<p align="center">
+  <em>Grafica ECG  PhysioNet</em>
+
 ---
 
 ### Interpretación general de la Parte A
