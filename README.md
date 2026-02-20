@@ -117,6 +117,8 @@ Para el análisis estadístico, se recorta la señal al segmento previamente def
 En esta etapa se implementan manualmente las fórmulas matemáticas de los principales estadísticos descriptivos:
 
 * **Media**: promedio de los valores de la señal, representa el valor central.
+
+
   ```python
 #  Media 
 suma = 0
@@ -126,6 +128,7 @@ for i in range(N):
 media_manual = suma / N
 
 ```
+
 * **Desviación estándar**: indica qué tan dispersos están los valores respecto a la media.
 * **Coeficiente de variación**: relaciona la desviación estándar con la media y permite evaluar la variabilidad relativa.
 * **Asimetría (skewness)**: muestra si la distribución de los valores está sesgada hacia la derecha o hacia la izquierda.
@@ -141,11 +144,13 @@ Posteriormente, los mismos estadísticos se calculan usando funciones de `numpy`
 
 Al comparar ambos métodos, se observa coherencia en los resultados, lo que confirma la adecuada implementación de las fórmulas.
 
+
 ```python
 media_lib = np.mean(senal_cortada)
 desv_lib = np.std(senal_cortada)
 
 ```
+
 
 ---
 ## Histograma Parte A
@@ -263,6 +268,8 @@ def calcular_snr(senal, ruido):
     return snr
 
 ```
+
+
 ---
 
 ### Selección de la señal de referencia
