@@ -118,15 +118,10 @@ En esta etapa se implementan manualmente las fórmulas matemáticas de los princ
 
 * **Media**: promedio de los valores de la señal, representa el valor central.
 
-
-  ```python
-#  Media 
+```python
 suma = 0
 for i in range(N):
     suma += senal_cortada[i]
-
-media_manual = suma / N
-
 ```
 
 * **Desviación estándar**: indica qué tan dispersos están los valores respecto a la media.
