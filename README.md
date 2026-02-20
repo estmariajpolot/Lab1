@@ -126,7 +126,7 @@ Posteriormente, los mismos estadísticos se calculan usando funciones de `numpy`
 Al comparar ambos métodos, se observa coherencia en los resultados, lo que confirma la adecuada implementación de las fórmulas.
 
 ---
-### Análisis con histogramas
+## Histograma Parte A
 
 Finalmente, se genera un histograma de la señal adquirida para analizar la distribución de sus amplitudes. Este gráfico permite identificar la dispersión de los datos y la posible presencia de valores atípicos asociados a ruido o interferencias.
 
@@ -140,21 +140,17 @@ Se incluye una línea vertical que representa la media, facilitando la interpret
 </p>
 ---
 
-### Interpretación general de la Parte A
-
-El análisis estadístico realizado permite caracterizar la señal electrocardiográfica desde un punto de vista cuantitativo, describiendo su variabilidad, distribución y forma. Estos resultados sirven como referencia para compararlos posteriormente con la señal adquirida de manera experimental.
-
 ### Parte B
 
 En esta parte del trabajo se realiza el análisis de una señal fisiológica adquirida experimentalmente mediante un sistema de adquisición de datos (DAQ). El objetivo principal es caracterizar estadísticamente una señal real, analizar su comportamiento temporal y probabilístico, y comparar estos resultados con los obtenidos a partir de la señal descargada desde la base de datos en la Parte A.
-
----
 
 las librerías necesarias para la adquisición, el procesamiento y la visualización de la señal, ademas de las ya utilizadas son:
 
 * `nidaqmx`: permite la comunicación con la tarjeta de adquisición de datos y la captura de señales analógicas.
 
 Esta herramienta permiten integrar la adquisición experimental con el procesamiento estadístico en Python.
+
+---
 
 ### Adquisición de la señal fisiológica
 
@@ -163,7 +159,7 @@ La señal se adquiere mediante una tarjeta DAQ configurada con una frecuencia de
 Una vez finalizada la adquisición, la señal se guarda en un archivo de texto que contiene dos columnas: tiempo (s) y voltaje (V). Esto facilita su posterior procesamiento y análisis en Python.
 
 <p align="center">
-  <img src="captura.png" width="700">
+  <img src="Captura.png" width="700">
 </p>
 
 <p align="center">
