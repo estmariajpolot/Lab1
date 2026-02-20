@@ -286,6 +286,9 @@ Finalmente, el código genera gráficas que muestran la señal fisiológica orig
 <p align="center">
   <em>Ruido tipo artefacto</em>
 
+  ---
+  
+
 ### Analisis de resultados y preguntas 
 
 Los valores estadísticos calculados sobre la señal sintética no son exactamente iguales a los obtenidos a partir de la señal real, debido a diferencias tanto en el offset como en la naturaleza de cada señal. La señal sintética presentaba un offset aproximado de −0,4, mientras que la señal real tenía un offset cercano a −0,2, lo cual explica directamente la diferencia en la media, ya que este parámetro refleja el desplazamiento vertical de la señal. Además, la desviación estándar muestra que la señal sintética tiene mayor dispersión que la real, lo que indica una variabilidad distinta en sus amplitudes. Las diferencias más notables se observan en la asimetría y la curtosis, parámetros que dependen fuertemente de la forma de la distribución de los datos; al ser la señal sintética generada artificialmente y posiblemente contaminada con ruido específico, puede presentar picos más pronunciados o una distribución más sesgada en comparación con la señal real, que contiene variaciones fisiológicas propias del sistema cardiovascular.
