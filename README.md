@@ -155,8 +155,7 @@ Esta herramienta permiten integrar la adquisición experimental con el procesami
 
 ---
 
-### Adquisición de la señal fisiológica
-
+### Adquisición de la señal DAQ
 La adquisición de la señal se realizó mediante un código independiente desarrollado específicamente para la captura de datos utilizando una tarjeta DAQ. Este script externo se encargó de configurar los parámetros de adquisición, como la frecuencia de muestreo, la duración del registro y la selección del canal de entrada analógica.
 
 Como resultado del proceso de captura, se generó un archivo en formato TXT que contiene dos columnas: tiempo (s) y voltaje (V).
@@ -166,7 +165,7 @@ Como resultado del proceso de captura, se generó un archivo en formato TXT que 
 </p>
 
 <p align="center">
-  <em>Señal Captura de datos </em>
+  <em>Diagrama de flujo Captura de datos </em>
 </p>
 
 El código principal del proyecto no realiza la adquisición directamente, sino que utiliza como entrada el archivo TXT generado por el script de captura. A partir de este archivo, se lleva a cabo el procesamiento y análisis.
