@@ -44,8 +44,14 @@ En primer lugar, se realizó la importación y visualización de una señal fisi
 ### Parte A
 
 En esta parte del trabajo se realiza el análisis de una señal electrocardiográfica (ECG) obtenida desde una base de datos pública en formato WFDB. El objetivo principal es caracterizar estadísticamente la señal y comprender su comportamiento temporal y probabilístico antes de compararla con una señal adquirida experimentalmente.
+<p align="center">
+  <img src="img1.png" width="700">
+</p>
 
-![Imagen 1](DIA2.png)
+<p align="center">
+  <em>Diagrama de flujo completo código principal</em>
+</p>
+
 ## Explicación del código
 
 En esta sección se explica el funcionamiento del código utilizado para el análisis estadístico de una señal fisiológica descargada desde PhysioNet.
