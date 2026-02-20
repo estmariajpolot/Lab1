@@ -78,7 +78,8 @@ Luego se define la ruta donde se encuentran los archivos del ECG descargado y se
 
 ```python
 directory = r"C:/Users/Usuario/Downloads/Procesamiento de señales/LAB 1/"
-record = wfdb.rdsamp(os.path.join(directory, "ath_001"))```
+record = wfdb.rdsamp(os.path.join(directory, "ath_001"))
+```
 
 Como el registro tiene 12 derivaciones, se selecciona una derivación específica: la Derivación II. Esta es una de las más utilizadas en el análisis electrocardiográfico, ya que permite visualizar con claridad el complejo QRS.
 
