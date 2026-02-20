@@ -76,6 +76,10 @@ Estas herramientas son fundamentales para el análisis de señales biomédicas e
 
 Luego se define la ruta donde se encuentran los archivos del ECG descargado y se lee el registro mediante la función `rdsamp` de `wfdb`. Esta función permite obtener tanto los valores de la señal como la información asociada al registro, por ejemplo, la frecuencia de muestreo.
 
+python
+directory = r"C:/Users/Usuario/Downloads/Procesamiento de señales/LAB 1/"
+record = wfdb.rdsamp(os.path.join(directory, "ath_001"))
+
 Como el registro tiene 12 derivaciones, se selecciona una derivación específica: la Derivación II. Esta es una de las más utilizadas en el análisis electrocardiográfico, ya que permite visualizar con claridad el complejo QRS.
 
 <p align="center">
