@@ -286,6 +286,14 @@ Finalmente, el código genera gráficas que muestran la señal fisiológica orig
 <p align="center">
   <em>Ruido tipo artefacto</em>
 
+### Analisis de resultados y preguntas 
+
+Los valores estadísticos calculados sobre la señal sintética no son exactamente iguales a los obtenidos a partir de la señal real, debido a diferencias tanto en el offset como en la naturaleza de cada señal. La señal sintética presentaba un offset aproximado de −0,4, mientras que la señal real tenía un offset cercano a −0,2, lo cual explica directamente la diferencia en la media, ya que este parámetro refleja el desplazamiento vertical de la señal. Además, la desviación estándar muestra que la señal sintética tiene mayor dispersión que la real, lo que indica una variabilidad distinta en sus amplitudes. Las diferencias más notables se observan en la asimetría y la curtosis, parámetros que dependen fuertemente de la forma de la distribución de los datos; al ser la señal sintética generada artificialmente y posiblemente contaminada con ruido específico, puede presentar picos más pronunciados o una distribución más sesgada en comparación con la señal real, que contiene variaciones fisiológicas propias del sistema cardiovascular.
+
+En términos generales, el análisis estadístico completo evidencia que, aunque ambas señales representan un ECG, su comportamiento cuantitativo no es idéntico. La comparación de media, desviación estándar, asimetría y curtosis permite identificar diferencias en el desplazamiento, la variabilidad y la forma de la distribución de amplitudes, lo que confirma que las condiciones de generación o adquisición influyen directamente en las características estadísticas de la señal. La señal real, al provenir de un proceso fisiológico y de un sistema de adquisición físico, incorpora variaciones naturales y posibles interferencias del entorno, mientras que la señal sintética depende del modelo matemático y de los parámetros utilizados para su construcción.
+
+Por otra parte, el tipo de ruido sí afecta el valor de la SNR calculado, ya que esta relación depende de la potencia del ruido añadido respecto a la potencia de la señal útil. Un ruido blanco gaussiano distribuye su energía de manera uniforme en el espectro, el ruido impulsivo introduce picos de alta amplitud que incrementan considerablemente la potencia del ruido, y el ruido de baja frecuencia altera la línea base de la señal; cada uno modifica la potencia total del componente no deseado de forma distinta, generando variaciones en la SNR. En consecuencia, la SNR no solo cuantifica la calidad de la señal, sino que también refleja cómo diferentes tipos de contaminación pueden afectar la interpretación clínica y la confiabilidad del análisis biomédico.
+
 
 
 
