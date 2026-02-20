@@ -76,7 +76,10 @@ Luego se define la ruta donde se encuentran los archivos del ECG descargado y se
 
 Como el registro tiene 12 derivaciones, se selecciona una derivación específica: la Derivación II. Esta es una de las más utilizadas en el análisis electrocardiográfico, ya que permite visualizar con claridad el complejo QRS.
 
-![Imagen 2](img1.png)
+<p align="center">
+  <img src="img1.png" width="700">
+<p align="center">
+  <em>Grafica ECG  PhysioNet</em>
 ---
 
 ### Extracción de parámetros temporales
@@ -120,19 +123,6 @@ Realizar estos cálculos de forma manual ayuda a comprender mejor el significado
 Posteriormente, los mismos estadísticos se calculan usando funciones de `numpy` y `scipy.stats`. Este enfoque simplifica el código y mejora la eficiencia, además de servir para verificar que los resultados obtenidos manualmente son correctos.
 
 Al comparar ambos métodos, se observa coherencia en los resultados, lo que confirma la adecuada implementación de las fórmulas.
-
----
-
-### Análisis con histogramas
-
-Finalmente, se genera un histograma de la señal ECG analizada. Este permite observar cómo se distribuyen las amplitudes de la señal y analizar su comportamiento estadístico.
-
-Se añade una línea vertical que representa la media, lo que facilita interpretar visualmente la distribución de los datos con respecto a su valor central.
-
-<p align="center">
-  <img src="img1.png" width="700">
-<p align="center">
-  <em>Grafica ECG  PhysioNet</em>
 
 ---
 
