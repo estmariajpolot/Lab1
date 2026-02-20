@@ -117,6 +117,15 @@ Para el análisis estadístico, se recorta la señal al segmento previamente def
 En esta etapa se implementan manualmente las fórmulas matemáticas de los principales estadísticos descriptivos:
 
 * **Media**: promedio de los valores de la señal, representa el valor central.
+  ```python
+#  Media 
+suma = 0
+for i in range(N):
+    suma += senal_cortada[i]
+
+media_manual = suma / N
+
+```
 * **Desviación estándar**: indica qué tan dispersos están los valores respecto a la media.
 * **Coeficiente de variación**: relaciona la desviación estándar con la media y permite evaluar la variabilidad relativa.
 * **Asimetría (skewness)**: muestra si la distribución de los valores está sesgada hacia la derecha o hacia la izquierda.
@@ -131,6 +140,12 @@ Realizar estos cálculos de forma manual ayuda a comprender mejor el significado
 Posteriormente, los mismos estadísticos se calculan usando funciones de `numpy` y `scipy.stats`. Este enfoque simplifica el código y mejora la eficiencia, además de servir para verificar que los resultados obtenidos manualmente son correctos.
 
 Al comparar ambos métodos, se observa coherencia en los resultados, lo que confirma la adecuada implementación de las fórmulas.
+
+```python
+media_lib = np.mean(senal_cortada)
+desv_lib = np.std(senal_cortada)
+
+```
 
 ---
 ## Histograma Parte A
@@ -240,6 +255,14 @@ En esta parte del trabajo se desarrolla el cálculo de la relación señal-ruido
 
 El procedimiento consiste en tomar la señal fisiológica de la parte B y generar versiones contaminadas artificialmente mediante la adición de distintos tipos de ruido. A partir de estas señales, se calcula la SNR con el fin de disponer de un parámetro numérico que describa la relación entre la potencia de la señal útil y la potencia del ruido añadido.
 
+```python
+def calcular_snr(senal, ruido):
+    potencia_senal = np.mean(senal**2)
+    potencia_ruido = np.mean(ruido**2)
+    snr = 10 * np.log10(potencia_senal / potencia_ruido)
+    return snr
+
+```
 ---
 
 ### Selección de la señal de referencia
@@ -254,6 +277,19 @@ Posteriormente, el código genera diferentes tipos de ruido artificial con el pr
 
 * **Ruido blanco gaussiano**, caracterizado por una distribución normal y utilizado comúnmente para modelar ruido electrónico.
 * **Ruido impulsivo**, que simula interferencias repentinas y de corta duración.
+  ```python
+ruido_impulso = np.zeros(N)
+prob = 0.01  # probabilidad de impulso
+
+for i in range(N):
+    if np.random.rand() < prob:
+        ruido_impulso[i] = np.random.choice([-1,1]) * 3*np.std(senal_original)
+
+senal_impulso = senal_original + ruido_impulso
+
+snr_impulso = calcular_snr(senal_original, ruido_impulso)
+
+```
 * **Ruido de baja frecuencia**, asociado a variaciones lentas o desplazamientos de la línea base.
 
 Cada señal de ruido se genera de forma independiente y con parámetros ajustables, lo que permite controlar su influencia sobre la señal fisiológica.
