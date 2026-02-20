@@ -80,7 +80,8 @@ Como el registro tiene 12 derivaciones, se selecciona una derivación específic
   <img src="img1.png" width="700">
 <p align="center">
   <em>Grafica ECG  PhysioNet</em>
----
+
+  ---
 
 ### Extracción de parámetros temporales
 
@@ -125,7 +126,210 @@ Posteriormente, los mismos estadísticos se calculan usando funciones de `numpy`
 Al comparar ambos métodos, se observa coherencia en los resultados, lo que confirma la adecuada implementación de las fórmulas.
 
 ---
+### Análisis con histogramas
+
+Finalmente, se genera un histograma de la señal adquirida para analizar la distribución de sus amplitudes. Este gráfico permite identificar la dispersión de los datos y la posible presencia de valores atípicos asociados a ruido o interferencias.
+
+Se incluye una línea vertical que representa la media, facilitando la interpretación visual de la distribución estadística.
+<p align="center">
+  <img src="img3.png" width="700">
+</p>
+
+<p align="center">
+  <em> </em>
+</p>
+---
 
 ### Interpretación general de la Parte A
 
 El análisis estadístico realizado permite caracterizar la señal electrocardiográfica desde un punto de vista cuantitativo, describiendo su variabilidad, distribución y forma. Estos resultados sirven como referencia para compararlos posteriormente con la señal adquirida de manera experimental.
+
+### Parte B
+
+En esta parte del trabajo se realiza el análisis de una señal fisiológica adquirida experimentalmente mediante un sistema de adquisición de datos (DAQ). El objetivo principal es caracterizar estadísticamente una señal real, analizar su comportamiento temporal y probabilístico, y comparar estos resultados con los obtenidos a partir de la señal descargada desde la base de datos en la Parte A.
+
+---
+
+las librerías necesarias para la adquisición, el procesamiento y la visualización de la señal, ademas de las ya utilizadas son:
+
+* `nidaqmx`: permite la comunicación con la tarjeta de adquisición de datos y la captura de señales analógicas.
+
+Esta herramienta permiten integrar la adquisición experimental con el procesamiento estadístico en Python.
+
+### Adquisición de la señal fisiológica
+
+La señal se adquiere mediante una tarjeta DAQ configurada con una frecuencia de muestreo y una duración previamente definidas. Durante este proceso se selecciona el canal de entrada analógica y se registran las muestras de manera controlada.
+
+Una vez finalizada la adquisición, la señal se guarda en un archivo de texto que contiene dos columnas: tiempo (s) y voltaje (V). Esto facilita su posterior procesamiento y análisis en Python.
+
+<p align="center">
+  <img src="captura.png" width="700">
+</p>
+
+<p align="center">
+  <em> </em>
+</p>
+
+---
+
+### Extracción de parámetros temporales
+
+Con base en la frecuencia de muestreo utilizada durante la adquisición, se construye un vector de tiempo que asocia cada muestra con su instante correspondiente. Este vector permite representar correctamente la señal en el dominio temporal.
+
+---
+
+### Visualización de la señal
+
+<p align="center">
+  <img src="img3.png" width="700">
+</p>
+
+<p align="center">
+  <em> </em>
+</p>
+
+
+El código grafica la señal adquirida en función del tiempo. Esta visualización permite verificar que la adquisición se haya realizado correctamente y observar características propias de una señal real, como la presencia de ruido, variaciones en la amplitud y posibles artefactos.
+
+La inspección visual es un paso clave antes de realizar el análisis estadístico.
+
+---
+
+### Recorte de la señal
+
+Para el análisis estadístico se utiliza el segmento completo correspondiente al intervalo de adquisición definido. De esta manera, los cálculos se realizan sobre una señal representativa del proceso experimental.
+
+---
+
+### Cálculo de los estadísticos descriptivos
+
+Sobre la señal adquirida se calculan los principales parámetros estadísticos descriptivos:
+
+* **Media**: representa el valor promedio de la señal.
+* **Desviación estándar**: indica el grado de dispersión de los valores respecto a la media.
+* **Coeficiente de variación**: permite evaluar la variabilidad relativa de la señal.
+* **Asimetría (skewness)**: describe la inclinación de la distribución de los valores.
+* **Curtosis**: indica el grado de concentración o dispersión de los datos alrededor de la media.
+
+Estos parámetros permiten cuantificar el efecto del ruido y de las condiciones reales de adquisición sobre la señal fisiológica.
+
+---
+
+### Análisis con histogramas
+
+Finalmente, se genera un histograma de la señal adquirida para analizar la distribución de sus amplitudes. Este gráfico permite observar la dispersión de los datos y la posible presencia de valores atípicos asociados al ruido o a interferencias.
+
+Se incluye una línea vertical que representa la media, lo que facilita la interpretación visual de la distribución estadística.
+
+---
+
+### Comparación con la Parte A
+
+Los resultados obtenidos en esta parte se comparan con los de la Parte A. Se observa que la señal adquirida experimentalmente presenta mayor variabilidad y dispersión, debido a la presencia de ruido y artefactos propios de un entorno real de medición.
+
+---
+
+### Parte B
+
+En esta parte del trabajo se realiza el análisis de una señal fisiológica adquirida experimentalmente mediante un sistema de adquisición de datos (DAQ). El objetivo principal es caracterizar estadísticamente una señal real, analizar su comportamiento temporal y probabilístico, y comparar estos resultados con los obtenidos a partir de la señal descargada desde la base de datos en la Parte A.
+
+<p align="center">
+  <img src="img4.png" width="700">
+<p align="center">
+  <em>Diagrama de flujo del proceso de adquisición y análisis de la señal experimental</em>
+---
+
+### Adquisición de la señal fisiológica
+
+La señal se adquiere mediante una tarjeta DAQ configurada con una frecuencia de muestreo y una duración previamente definidas. Durante este proceso se selecciona el canal de entrada analógica y se registran las muestras de manera controlada.
+
+Una vez finalizada la adquisición, la señal se guarda en un archivo de texto que contiene dos columnas: tiempo (s) y voltaje (V). Esto facilita su posterior procesamiento y análisis en Python.
+
+---
+
+### Extracción de parámetros temporales
+
+Con base en la frecuencia de muestreo utilizada durante la adquisición, se construye un vector de tiempo que asocia cada muestra con su instante correspondiente. Este vector permite representar correctamente la señal en el dominio temporal.
+
+---
+
+### Visualización de la señal
+
+El código grafica la señal adquirida en función del tiempo. Esta visualización permite verificar que la adquisición se haya realizado correctamente y observar características propias de una señal real, como la presencia de ruido, variaciones en la amplitud y posibles artefactos.
+
+La inspección visual es un paso clave antes de realizar el análisis estadístico.
+
+---
+
+### Recorte de la señal
+
+Para el análisis estadístico se utiliza el segmento completo correspondiente al intervalo de adquisición definido. De esta manera, los cálculos se realizan sobre una señal representativa del proceso experimental.
+
+---
+
+### Cálculo de los estadísticos descriptivos
+
+Sobre la señal adquirida se calculan los principales parámetros estadísticos descriptivos:
+
+* **Media**: representa el valor promedio de la señal.
+* **Desviación estándar**: indica el grado de dispersión de los valores respecto a la media.
+* **Coeficiente de variación**: permite evaluar la variabilidad relativa de la señal.
+* **Asimetría (skewness)**: describe la inclinación de la distribución de los valores.
+* **Curtosis**: indica el grado de concentración o dispersión de los datos alrededor de la media.
+
+Estos parámetros permiten cuantificar el efecto del ruido y de las condiciones reales de adquisición sobre la señal fisiológica.
+
+---
+
+### Análisis con histogramas
+
+Finalmente, se genera un histograma de la señal adquirida para analizar la distribución de sus amplitudes. Este gráfico permite observar la dispersión de los datos y la posible presencia de valores atípicos asociados al ruido o a interferencias.
+
+Se incluye una línea vertical que representa la media, lo que facilita la interpretación visual de la distribución estadística.
+
+---
+
+### Comparación con la Parte A
+
+Los resultados obtenidos en esta parte se comparan con los de la Parte A. Se observa que la señal adquirida experimentalmente presenta mayor variabilidad y dispersión, debido a la presencia de ruido y artefactos propios de un entorno real de medición.
+
+---
+
+### Interpretación general de la Parte B
+
+El análisis estadístico de la señal experimental permite evidenciar las diferencias entre una señal proveniente de una base de datos controlada y una señal real adquirida en laboratorio. Esto resalta la importancia del análisis estadístico para evaluar la calidad y confiabilidad de las señales biomédicas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
