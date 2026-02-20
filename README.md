@@ -45,7 +45,7 @@ En primer lugar, se realizó la importación y visualización de una señal fisi
 
 En esta parte del trabajo se realiza el análisis de una señal electrocardiográfica (ECG) obtenida desde una base de datos pública en formato WFDB. El objetivo principal es caracterizar estadísticamente la señal y comprender su comportamiento temporal y probabilístico antes de compararla con una señal adquirida experimentalmente.
 <p align="center">
-  <img src="img1.png" width="700">
+  <img src="DIA2.png" width="700">
 </p>
 
 <p align="center">
