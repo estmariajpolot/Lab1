@@ -218,6 +218,14 @@ Finalmente, se genera un histograma de la señal adquirida para analizar la dist
 
 Se incluye una línea vertical que representa la media, lo que facilita la interpretación visual de la distribución estadística.
 
+<p align="center">
+  <img src="img4.png" width="700">
+</p>
+
+<p align="center">
+  <em> Histograma de la señal adquirida </em>
+</p>
+
 ---
 
 
