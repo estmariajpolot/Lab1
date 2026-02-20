@@ -279,19 +279,6 @@ Posteriormente, el código genera diferentes tipos de ruido artificial con el pr
 
 * **Ruido blanco gaussiano**, caracterizado por una distribución normal y utilizado comúnmente para modelar ruido electrónico.
 * **Ruido impulsivo**, que simula interferencias repentinas y de corta duración.
-  ```python
-ruido_impulso = np.zeros(N)
-prob = 0.01  # probabilidad de impulso
-
-for i in range(N):
-    if np.random.rand() < prob:
-        ruido_impulso[i] = np.random.choice([-1,1]) * 3*np.std(senal_original)
-
-senal_impulso = senal_original + ruido_impulso
-
-snr_impulso = calcular_snr(senal_original, ruido_impulso)
-
-```
 * **Ruido de baja frecuencia**, asociado a variaciones lentas o desplazamientos de la línea base.
 
 Cada señal de ruido se genera de forma independiente y con parámetros ajustables, lo que permite controlar su influencia sobre la señal fisiológica.
@@ -387,6 +374,23 @@ Además, la SNR no distingue entre tipos de contaminación ni identifica si el r
 - Aunque los parámetros estadísticos permiten describir globalmente una señal biomédica y evaluar su calidad, su uso aislado no es suficiente para establecer diagnósticos clínicos, ya que no capturan completamente la información morfológica y fisiológica del ECG.
 
 - Las técnicas aplicadas en esta práctica constituyen una base fundamental para el procesamiento digital de señales biomédicas y resaltan la importancia de integrar análisis estadístico, conocimiento fisiológico y evaluación experimental para una interpretación adecuada.
+
+---
+### Referencias 
+Elgendi, M. (2016). Optimal signal quality index for photoplethysmogram signals. Bioengineering, 3(4), 21. https://doi.org/10.3390/bioengineering3040021
+
+Goldberger, A. L., Amaral, L. A. N., Glass, L., Hausdorff, J. M., Ivanov, P. C., Mark, R. G., Mietus, J. E., Moody, G. B., Peng, C. K., & Stanley, H. E. (2000). PhysioBank, PhysioToolkit, and PhysioNet: Components of a new research resource for complex physiologic signals. Circulation, 101(23), e215–e220. https://doi.org/10.1161/01.CIR.101.23.e215
+
+Moody, G. B., & Mark, R. G. (2001). The impact of the MIT-BIH arrhythmia database. IEEE Engineering in Medicine and Biology Magazine, 20(3), 45–50. https://doi.org/10.1109/51.932724
+
+Oppenheim, A. V., Willsky, A. S., & Nawab, S. H. (1997). Signals and systems (2nd ed.). Prentice Hall.
+
+Proakis, J. G., & Manolakis, D. G. (2007). Digital signal processing: Principles, algorithms, and applications (4th ed.). Pearson Prentice Hall.
+
+Rangayyan, R. M. (2002). Biomedical signal analysis: A case-study approach. Wiley-IEEE Press.
+
+Sörnmo, L., & Laguna, P. (2005). Bioelectrical signal processing in cardiac and neurological applications. Elsevier Academic Press.
+  
 
 
 
