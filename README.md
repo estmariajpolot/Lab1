@@ -230,6 +230,63 @@ Se incluye una línea vertical que representa la media, lo que facilita la inter
 </p>
 
 ---
+### Parte C 
+
+En esta parte del trabajo se desarrolla el cálculo de la relación señal-ruido ( SNR) como una herramienta cuantitativa para evaluar la calidad de una señal fisiológica cuando es afectada por diferentes tipos de ruido.
+
+El procedimiento consiste en tomar la señal fisiológica de la parte B y generar versiones contaminadas artificialmente mediante la adición de distintos tipos de ruido. A partir de estas señales, se calcula la SNR con el fin de disponer de un parámetro numérico que describa la relación entre la potencia de la señal útil y la potencia del ruido añadido.
+
+---
+
+### Selección de la señal de referencia
+
+El código inicia con la selección de una señal fisiológica previamente cargada, la cual se considera como señal de referencia  en archivos .txt . Esta señal representa la información útil y se emplea como base para todos los cálculos posteriores. A partir de esta señal se obtiene la potencia asociada a la señal original, necesaria para el cálculo de la SNR.
+
+---
+
+### Generación de señales de ruido
+
+Posteriormente, el código genera diferentes tipos de ruido artificial con el propósito de simular condiciones reales de adquisición de señales biomédicas. Entre los ruidos generados se incluyen:
+
+* **Ruido blanco gaussiano**, caracterizado por una distribución normal y utilizado comúnmente para modelar ruido electrónico.
+* **Ruido impulsivo**, que simula interferencias repentinas y de corta duración.
+* **Ruido de baja frecuencia**, asociado a variaciones lentas o desplazamientos de la línea base.
+
+Cada señal de ruido se genera de forma independiente y con parámetros ajustables, lo que permite controlar su influencia sobre la señal fisiológica.
+
+<p align="center">
+  <img src="img5.png" width="700">
+<p align="center">
+  <em>Ruido gaussiano</em>
+
+---
+
+### Contaminación de la señal fisiológica
+
+Una vez generadas las señales de ruido, estas se suman a la señal fisiológica original. Este proceso da como resultado señales contaminadas que conservan la información original, pero incorporan perturbaciones artificiales. La finalidad de este procedimiento es disponer de diferentes versiones de la señal bajo condiciones controladas de ruido.
+<p align="center">
+  <img src="img6.png" width="700">
+<p align="center">
+  <em>Ruido impulso</em>
+
+---
+
+### Cálculo de la relación señal-ruido (SNR)
+
+Para cada señal contaminada, el código calcula la relación señal-ruido utilizando la potencia de la señal de referencia y la potencia del ruido añadido. La SNR se expresa en decibelios (dB), lo que permite representar la relación entre señal y ruido en una escala logarítmica.
+
+Este cálculo se realiza de manera sistemática para cada tipo de ruido generado.
+
+---
+
+### Visualización de las señales
+
+Finalmente, el código genera gráficas que muestran la señal fisiológica original junto con las señales contaminadas. Estas visualizaciones permiten verificar de forma gráfica el efecto del ruido añadido sobre la señal, así como comprobar el correcto funcionamiento del proceso de contaminación y del cálculo de la SNR.
+<p align="center">
+  <img src="img7.png" width="700">
+<p align="center">
+  <em>Ruido tipo artefacto</em>
+
 
 
 
