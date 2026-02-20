@@ -297,9 +297,53 @@ En términos generales, el análisis estadístico completo evidencia que, aunque
 
 Por otra parte, el tipo de ruido sí afecta el valor de la SNR calculado, ya que esta relación depende de la potencia del ruido añadido respecto a la potencia de la señal útil. Un ruido blanco gaussiano distribuye su energía de manera uniforme en el espectro, el ruido impulsivo introduce picos de alta amplitud que incrementan considerablemente la potencia del ruido, y el ruido de baja frecuencia altera la línea base de la señal; cada uno modifica la potencia total del componente no deseado de forma distinta, generando variaciones en la SNR. En consecuencia, la SNR no solo cuantifica la calidad de la señal, sino que también refleja cómo diferentes tipos de contaminación pueden afectar la interpretación clínica y la confiabilidad del análisis biomédico.
 
+---
+### Alcance de los parámetros estadísticos en la detección de patologías
 
+Los parámetros estadísticos descriptivos permiten caracterizar globalmente una señal biomédica sin depender de la identificación de puntos fiduciales específicos, como el pico R en el ECG. Esto representa una ventaja en situaciones donde la señal está contaminada o cuando la detección automática de eventos presenta errores.
 
+En el contexto clínico, parámetros como la desviación estándar, la asimetría y la curtosis pueden reflejar alteraciones en la morfología del ECG asociadas a cambios fisiológicos o patológicos. Por ejemplo, una mayor variabilidad podría relacionarse con arritmias, mientras que cambios en la curtosis podrían indicar presencia de picos anómalos o complejos ventriculares prematuros.
 
+Sin embargo, estos parámetros no permiten identificar directamente el tipo de patología, ya que describen propiedades globales de la señal y no eventos específicos del ciclo cardíaco. Por tanto, su utilidad clínica es principalmente complementaria y no diagnóstica por sí sola.
+
+---
+### Limitaciones en la detección de patologías
+
+El uso exclusivo de parámetros estadísticos presenta varias limitaciones:
+
+- No distingue entre cambios fisiológicos normales y alteraciones patológicas.
+
+- Es altamente dependiente de la ventana temporal seleccionada.
+
+- Puede verse afectado por ruido y artefactos.
+
+- No considera la información morfológica detallada del ECG.
+
+- Existe alta variabilidad interindividual, lo que dificulta establecer valores umbral universales.
+
+Por lo tanto, aunque los estadísticos descriptivos aportan información cuantitativa relevante, deben complementarse con análisis temporal, espectral o clínico para una interpretación diagnóstica adecuada.
+
+---
+### Alcance y limitaciones para evaluar calidad de señal
+
+La relación señal-ruido (SNR) es una herramienta útil para cuantificar objetivamente la calidad de una señal biomédica. Una mayor SNR indica que la potencia de la señal útil es significativamente superior a la del ruido, lo cual facilita el análisis automático y clínico.
+
+No obstante, una SNR elevada no garantiza necesariamente que la señal sea clínicamente interpretable, ya que ciertos tipos de ruido, como el impulsivo, pueden alterar la morfología del ECG aun cuando su potencia promedio no sea dominante.
+
+Además, la SNR no distingue entre tipos de contaminación ni identifica si el ruido afecta regiones críticas de la señal, como el complejo QRS o el segmento ST. Por ello, la evaluación de calidad debe considerar tanto métricas cuantitativas como inspección visual y análisis contextual.
+
+---
+### CONCLUSIONES
+
+- Se logró caracterizar estadísticamente señales fisiológicas reales y sintéticas mediante el cálculo de parámetros descriptivos como media, desviación estándar, coeficiente de variación, asimetría y curtosis.
+
+- Se evidenció que las condiciones de adquisición influyen directamente en los valores estadísticos obtenidos, mostrando diferencias entre una señal descargada desde una base de datos y una señal adquirida experimentalmente.
+
+- Se comprobó que el tipo de ruido añadido afecta significativamente la relación señal-ruido (SNR), demostrando que distintos mecanismos de contaminación impactan de forma diferente la potencia del componente no deseado.
+
+- Aunque los parámetros estadísticos permiten describir globalmente una señal biomédica y evaluar su calidad, su uso aislado no es suficiente para establecer diagnósticos clínicos, ya que no capturan completamente la información morfológica y fisiológica del ECG.
+
+- Las técnicas aplicadas en esta práctica constituyen una base fundamental para el procesamiento digital de señales biomédicas y resaltan la importancia de integrar análisis estadístico, conocimiento fisiológico y evaluación experimental para una interpretación adecuada.
 
 
 
